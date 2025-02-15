@@ -197,3 +197,13 @@ resource "aws_subnet" "variables-subnet" {
 output "subnet_addrs" {
   value = module.subnet_addrs.network_cidr_blocks
 }
+
+output "hello-world" {
+  description = "Print a Hello World text output"
+  value = "Hello World"
+}
+
+output "vpc_id" {
+  description = "Output the ID for the primary VPC"
+  value = aws_vpc.vpc.id
+}
