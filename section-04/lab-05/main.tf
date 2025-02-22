@@ -119,3 +119,32 @@ resource "aws_route_table_association" "private" {
   for_each       = aws_subnet.private_subnets
   subnet_id      = each.value.id
 }
+
+# Terraform Data Block - To Lookup Latest Ubuntu 20.04 AMI Image
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"]
+}
+
+# Terraform Data Block - Lookup Ubuntu 22.04
+data "aws_ami" "ubuntu_22_04" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+
+  owners = ["099720109477"]
+}
