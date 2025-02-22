@@ -174,7 +174,15 @@ resource "aws_instance" "web_server" {
     private_key = tls_private_key.generated.private_key_pem
     host        = self.public_ip
   }
+  provisioner "remote-exec" {
+    inline = [
+      "sudo rm -rf /tmp",
+      "sudo git clone https://github.com/hashicorp/demo-terraform-101 /tmp",
+      "sudo sh /tmp/assets/setup-web.sh",
+    ]
+  }
 }
+
 
 
 
