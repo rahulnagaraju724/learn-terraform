@@ -292,7 +292,7 @@ module "server" {
   ]
 }
 
-output "public_ip" {
+output "public_ip_mine" {
   value = module.server.public_ip
 }
 
