@@ -291,8 +291,7 @@ module "server" {
     aws_security_group.vpc-web.id
   ]
 }
-
-output "public_ip_mine" {
+output "public_ip" {
   value = module.server.public_ip
 }
 
