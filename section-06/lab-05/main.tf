@@ -335,13 +335,12 @@ module "autoscaling" {
   desired_capacity    = 1
 
   # Launch template
-  use_lt    = true
-  create_lt = true
+  create_launch_template = true
 
   image_id      = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
 
-  tags_as_map = {
+  tags = {
     Name = "Web EC2 Server 2"
   }
 
