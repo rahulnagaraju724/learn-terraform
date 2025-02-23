@@ -322,7 +322,7 @@ output "public_dns_server_subnet_1" {
 
 module "autoscaling" {
   source  = "terraform-aws-modules/autoscaling/aws"
-  version = "4.9.0"
+  version = "8.1.0"
 
   # Autoscaling group
   name = "myasg"
