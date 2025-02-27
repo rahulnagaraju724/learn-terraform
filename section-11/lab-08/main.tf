@@ -20,5 +20,5 @@ min_upper = 2
 }
 
 output "random_string_2"{
-  value=random_string.rahul.result
+  value=random_string.random2.result
 }
