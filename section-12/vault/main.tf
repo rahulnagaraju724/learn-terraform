@@ -8,3 +8,7 @@ provider "vault" {
 data "vault_generic_secret" "phone_number" {
   path = "secret/app"
 }
+
+output "phone_number" {
+  value = data.vault_generic_secret.phone_number
+}
