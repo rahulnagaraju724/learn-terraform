@@ -5,3 +5,6 @@ provider "vault" {
 }
 
 
+data "vault_generic_secret" "phone_number" {
+  path = "secret/app"
+}
